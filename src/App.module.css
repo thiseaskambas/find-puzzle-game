@@ -1,0 +1,7 @@
+.imgCtn{
+   margin: 2rem;
+}
+
+.imgCtn img{
+   max-width: 100%;
+}
