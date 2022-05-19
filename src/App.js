@@ -22,10 +22,10 @@ function App() {
   function clickHandler(e) {
     setClicked((prev) => !prev);
     const { width, height } = e.target.getBoundingClientRect();
-    // const { offsetX, offsetY } = e.nativeEvent;
-    const { clientX: offsetX, clientY: offsetY } = e;
-    setOffX(offsetX);
-    setOffY(offsetY);
+    const { offsetX, offsetY } = e.nativeEvent;
+    const { clientX, clientY } = e;
+    setOffX(clientX);
+    setOffY(clientY);
     setX(Math.round((offsetX / width) * 100));
     setY(Math.round((offsetY / height) * 100));
     console.log({ x, y, offsetX, offsetY });
