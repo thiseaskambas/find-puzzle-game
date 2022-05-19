@@ -4,6 +4,8 @@ import { useState } from "react";
 import { imageActions } from "./features/image/imageSlice";
 import puzzleImg from "./assets/puzzle.jpeg";
 import styles from "./App.module.css";
+import Welcome from "./components/welcome/Welcome";
+import Ui from "./components/ui/Ui";
 
 function App() {
   const { setFound } = imageActions;
@@ -14,11 +16,14 @@ function App() {
   const [offY, setOffY] = useState(null);
   const [clicked, setClicked] = useState(false);
   const [score, setScore] = useState(0);
+  const [status, setStatus] = useState("idle");
+  const [choice, setChoice] = useState("idle");
 
   function clickHandler(e) {
     setClicked((prev) => !prev);
     const { width, height } = e.target.getBoundingClientRect();
-    const { offsetX, offsetY } = e.nativeEvent;
+    // const { offsetX, offsetY } = e.nativeEvent;
+    const { clientX: offsetX, clientY: offsetY } = e;
     setOffX(offsetX);
     setOffY(offsetY);
     setX(Math.round((offsetX / width) * 100));
@@ -30,26 +35,38 @@ function App() {
       dispatch(setFound(k));
       setClicked(false);
       setScore((prev) => prev + 1);
+      setChoice("correct");
+    } else {
+      setChoice("wrong");
     }
   }
 
+  function playHandler() {
+    setStatus("playing");
+  }
+
   return (
-    <>
-      <div className={styles.imgCtn}>
-        <img src={puzzleImg} onClick={clickHandler} />
-        {clicked && (
-          <Selector
-            style={{
-              left: offX,
-              top: offY,
-            }}
-            onSelect={selectHandler}
-            coordinates={{ x, y }}
-          />
-        )}
-      </div>
-      <div>score: {score}</div>
-    </>
+    <Ui>
+      {status === "idle" && <Welcome onClick={playHandler} />}
+      {status === "playing" && (
+        <>
+          <div className={styles.imgCtn}>
+            <img src={puzzleImg} onClick={clickHandler} />
+            {clicked && (
+              <Selector
+                style={{
+                  left: offX,
+                  top: offY,
+                }}
+                onSelect={selectHandler}
+                coordinates={{ x, y }}
+              />
+            )}
+          </div>
+          <div className={styles.score}>score: {score}</div>
+        </>
+      )}
+    </Ui>
   );
 }
 

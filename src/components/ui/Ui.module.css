@@ -1,0 +1,20 @@
+.header, .footer{
+   padding: 1rem;
+   text-align: center;
+   text-transform: capitalize;
+   font-weight: bold;
+   background-color: hsl(201, 82%, 38%);
+   color: white;
+   width: 100%;
+}
+
+.page{
+   height: 100vh;
+   background-color: yellowgreen;
+   justify-content: space-between;
+   align-items: center;
+   overflow: hidden;
+   display: flex;
+   flex-direction: column;
+}
+
