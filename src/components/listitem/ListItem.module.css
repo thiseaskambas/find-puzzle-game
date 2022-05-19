@@ -1,0 +1,9 @@
+.listitem{
+   color: azure;
+   font-size: 1.2rem;
+}
+
+.listitem:hover{
+   text-decoration: underline;
+   cursor: pointer;
+}

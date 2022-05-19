@@ -1,0 +1,29 @@
+.select{
+   position: absolute;
+   border: 3px solid hsla(217, 100%, 19%, 1);
+   height: 40px;
+   width: 40px;
+   transform: translate(-50%, -50%);
+}
+
+.menu{
+position: absolute;
+transform: translate(-50%);
+}
+
+.menu ul{
+   list-style-type: none;
+   padding: 0; 
+   margin: 25px;
+   background-color: hsla(217, 100%, 19%, 0.709)
+}
+
+.listitem{
+   color: azure;
+   font-size: 1.2rem;
+}
+
+.listitem:hover{
+   text-decoration: underline;
+   cursor: pointer;
+}

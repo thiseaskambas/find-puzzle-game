@@ -1,7 +1,5 @@
-.imgCtn{
-   margin: 2rem;
+.imgCtn img{
+   max-height: 70vh;
+   margin: 0rem;
 }
 
-.imgCtn img{
-   max-width: 100%;
-}
