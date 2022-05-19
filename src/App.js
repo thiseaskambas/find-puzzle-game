@@ -28,6 +28,7 @@ function App() {
     setOffY(offsetY);
     setX(Math.round((offsetX / width) * 100));
     setY(Math.round((offsetY / height) * 100));
+    console.log({ x, y, offsetX, offsetY });
   }
 
   function selectHandler({ item, k }) {
