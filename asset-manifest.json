@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/find-puzzle-game/static/css/main.a990f045.css",
+    "main.js": "/find-puzzle-game/static/js/main.a9798b6f.js",
+    "static/media/puzzle.jpeg": "/find-puzzle-game/static/media/puzzle.ad203149b6df1866de93.jpeg",
+    "index.html": "/find-puzzle-game/index.html",
+    "main.a990f045.css.map": "/find-puzzle-game/static/css/main.a990f045.css.map",
+    "main.a9798b6f.js.map": "/find-puzzle-game/static/js/main.a9798b6f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a990f045.css",
+    "static/js/main.a9798b6f.js"
+  ]
+}
